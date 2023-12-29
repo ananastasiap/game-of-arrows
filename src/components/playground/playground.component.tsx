@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setCurrentStep } from "./store/slices"
 import Controls from "./components/controls"
 import { INTERVAL_TIME } from "./constants"
+import RandomKey from "./components/random-keys/randomKeys.component"
 
 const Playground: React.FC = () => {
   const state = useAppSelector((state) => state.playground)
@@ -33,6 +34,7 @@ const Playground: React.FC = () => {
         isTimerActive={isTimerActive}
         setIsTimerActive={setIsTimerActive}
       />
+      <RandomKey isTimerActive={isTimerActive} />
     </div>
   )
 }

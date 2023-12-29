@@ -12,8 +12,12 @@ export const playgroundSlice = createSlice({
     setCurrentStep: (state) => {
       state.currentStep += 1
     },
+    setSteps: (state) => {
+      const randomKeys = Math.floor(Math.random() * 4)
+      console.log(randomKeys)
+    },
   },
 })
 
-export const { setCurrentStep } = playgroundSlice.actions
+export const { setCurrentStep, setSteps } = playgroundSlice.actions
 export default playgroundSlice.reducer
