@@ -4,6 +4,7 @@ import { setCurrentStep } from "./store/slices"
 import Controls from "./components/controls"
 import { INTERVAL_TIME } from "./constants"
 import RandomKey from "./components/random-keys/randomKeys.component"
+import { setSteps } from "./store/slices"
 
 const Playground: React.FC = () => {
   const state = useAppSelector((state) => state.playground)
@@ -17,6 +18,7 @@ const Playground: React.FC = () => {
     if (isTimerActive) {
       refreshIntervalId.current = setInterval(() => {
         dispatch(setCurrentStep())
+        dispatch(setSteps())
       }, INTERVAL_TIME)
     } else {
       clearInterval(refreshIntervalId.current as NodeJS.Timeout)
