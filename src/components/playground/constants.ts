@@ -1,1 +1,1 @@
-export const INTERVAL_TIME: number = 3000
+export const INTERVAL_TIME: number = 2000
