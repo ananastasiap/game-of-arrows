@@ -22,8 +22,17 @@ export const playgroundSlice = createSlice({
         enteredValue: null,
       })
     },
+    setEnteredValue: (state, action) => {
+      const step = state.steps[state.currentStep - 1]
+
+      state.steps[state.currentStep - 1] = {
+        ...step,
+        enteredValue: action.payload,
+      }
+    },
   },
 })
 
-export const { setCurrentStep, setSteps } = playgroundSlice.actions
+export const { setCurrentStep, setSteps, setEnteredValue } =
+  playgroundSlice.actions
 export default playgroundSlice.reducer

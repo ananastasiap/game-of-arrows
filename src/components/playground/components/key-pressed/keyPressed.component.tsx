@@ -1,18 +1,28 @@
 import { useCallback, useEffect } from "react"
 import { MAP_ARROW_CODES } from "../../constants"
+import { useAppDispatch } from "../../../../app/hooks"
+import { setEnteredValue } from "../../store/slices"
+import { useKeyPressedElement } from "./hooks"
 
 export interface IKeyPressedProps {
   isTimerActive: boolean
 }
 
 const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
-  // const { isTimerActive } = props
+  const { isTimerActive } = props
 
-  const handleKeyDown = useCallback((event: KeyboardEvent) => {
-    if (MAP_ARROW_CODES.hasOwnProperty(event.key)) {
-      console.log(event.key)
-    }
-  }, [])
+  const keyPressedElement = useKeyPressedElement()
+
+  const dispatch = useAppDispatch()
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (MAP_ARROW_CODES.hasOwnProperty(event.key) && isTimerActive) {
+        dispatch(setEnteredValue(event.key))
+      }
+    },
+    [dispatch, isTimerActive],
+  )
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown)
@@ -22,7 +32,12 @@ const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
     }
   })
 
-  return <div>KeyPressed</div>
+  return (
+    <div>
+      <h3>KeyPressed</h3>
+      <span>{keyPressedElement}</span>
+    </div>
+  )
 }
 
 export default KeyPressed
