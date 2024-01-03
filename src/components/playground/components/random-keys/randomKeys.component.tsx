@@ -12,8 +12,8 @@ const RandomKey: React.FC<IRandomKey> = (props) => {
 
   return (
     <div>
-      {state.steps.map((el, index) => (
-        <span key={index}>
+      {state.steps.map((el) => (
+        <span key={el.step}>
           {MAP_ARROW_CODES[el.currentValue as keyof IMapArrowCodes]}
         </span>
       ))}
