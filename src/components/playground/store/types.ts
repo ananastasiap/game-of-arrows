@@ -1,5 +1,6 @@
 export interface IPlaygroundStepState {
-  currentValue: string
+  currentValue: string | null
+  enteredValue: string | null
 }
 
 export interface IPlaygroundState {

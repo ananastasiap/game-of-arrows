@@ -19,6 +19,7 @@ export const playgroundSlice = createSlice({
 
       state.steps.push({
         currentValue: ARR_ARROW_CODES[randomKeys],
+        enteredValue: null,
       })
     },
   },
