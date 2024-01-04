@@ -1,0 +1,11 @@
+.icon {
+  background-color: gray;
+
+  &__success {
+    background-color: green;
+  }
+
+  &__unsuccess {
+    background-color: red;
+  }
+}
