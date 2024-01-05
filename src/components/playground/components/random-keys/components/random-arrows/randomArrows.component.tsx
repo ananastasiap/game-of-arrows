@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../../../../../app/hooks"
+import { Text } from "../../../../../UI"
 import { MAP_ARROW_CODES } from "../../../../constants"
 import { IPlaygroundStepState } from "../../../../store/types"
 import { IMapArrowCodes } from "../../../../types"
@@ -23,9 +24,9 @@ const RandomArrows: React.FC = () => {
   return (
     <>
       {state.steps.map((el) => (
-        <span key={el.step} className={getStylesRandomKeys(el)}>
+        <Text key={el.step} className={getStylesRandomKeys(el)}>
           {MAP_ARROW_CODES[el.currentValue as keyof IMapArrowCodes]}
-        </span>
+        </Text>
       ))}
     </>
   )

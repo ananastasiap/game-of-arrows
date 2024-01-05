@@ -1,3 +1,5 @@
+import { Text } from "../../../../UI"
+
 export interface IResultMessage {
   isSuccessEndGame: boolean
 }
@@ -5,13 +7,13 @@ export interface IResultMessage {
 const ResultMessage: React.FC<IResultMessage> = (props) => {
   const { isSuccessEndGame } = props
   return isSuccessEndGame ? (
-    <span>
+    <Text>
       Congrats! <br /> You Win!
-    </span>
+    </Text>
   ) : (
-    <span>
+    <Text>
       My regrets. <br /> You have lost this game
-    </span>
+    </Text>
   )
 }
 
