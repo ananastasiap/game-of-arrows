@@ -3,6 +3,7 @@ import { MAP_ARROW_CODES } from "../../constants"
 import { useAppDispatch } from "../../../../app/hooks"
 import { setEnteredValue } from "../../store/slices"
 import { useKeyPressedElement } from "./hooks"
+import { Header } from "../../../UI"
 
 export interface IKeyPressedProps {
   isTimerActive: boolean
@@ -34,7 +35,7 @@ const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
 
   return (
     <div>
-      <h3>KeyPressed</h3>
+      <Header>KeyPressed</Header>
       <span>{keyPressedElement}</span>
     </div>
   )
