@@ -4,7 +4,7 @@ import { Provider } from "react-redux"
 import { store } from "./app/store"
 import App from "./App"
 import { StyledEngineProvider } from "@mui/material"
-import "./index.css"
+import "./index.scss"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

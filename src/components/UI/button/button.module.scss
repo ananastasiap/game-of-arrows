@@ -1,3 +1,21 @@
 .button {
-  background-color: #000;
+  min-width: 100px;
+  padding: 0 16px;
+  line-height: 36px;
+  color: #fff;
+  background: none;
+  background-color: var(--color-black-lighter);
+  border: none;
+  border-radius: 18px;
+  transition: all 0.7s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-gray-dark);
+  }
+
+  &:disabled {
+    color: var(--color-gray-light);
+    background-color: var(--color-gray-medium);
+  }
 }
