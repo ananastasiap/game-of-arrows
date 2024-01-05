@@ -1,3 +1,5 @@
+import Button from "../../../UI/button"
+
 export interface IControlsProps {
   isTimerActive: boolean
   setIsTimerActive: React.Dispatch<React.SetStateAction<boolean>>
@@ -8,12 +10,12 @@ const Controls: React.FC<IControlsProps> = (props) => {
 
   return (
     <div>
-      <button onClick={() => setIsTimerActive(true)} disabled={isTimerActive}>
+      <Button onClick={() => setIsTimerActive(true)} disabled={isTimerActive}>
         Play
-      </button>
-      <button onClick={() => setIsTimerActive(false)} disabled={!isTimerActive}>
+      </Button>
+      <Button onClick={() => setIsTimerActive(false)} disabled={!isTimerActive}>
         Pause
-      </button>
+      </Button>
     </div>
   )
 }
