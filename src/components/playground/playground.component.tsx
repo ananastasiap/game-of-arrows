@@ -8,6 +8,9 @@ import RandomKey from "./components/random-keys/randomKeys.component"
 import { END_GAME_CONDITIONS, INTERVAL_TIME } from "./constants"
 import Score from "./components/score"
 import Modal from "./components/modal"
+import Description from "./components/description"
+
+import styles from "./playground.module.scss"
 
 const Playground: React.FC = () => {
   const state = useAppSelector((state) => state.playground)
@@ -51,15 +54,20 @@ const Playground: React.FC = () => {
   }, [state.totalSuccessful, state.totalUnsuccessful])
 
   return (
-    <div>
-      {state.currentStep}
-      <Controls
-        isTimerActive={isTimerActive}
-        setIsTimerActive={setIsTimerActive}
-      />
-      <RandomKey isTimerActive={isTimerActive} />
-      <KeyPressed isTimerActive={isTimerActive} />
-      <Score />
+    <div className={styles.container}>
+      <div className={styles.column}>
+        <RandomKey isTimerActive={isTimerActive} />
+        <KeyPressed isTimerActive={isTimerActive} />
+        <Score />
+      </div>
+      <div className={styles.column}>
+        <Description />
+        <Controls
+          isTimerActive={isTimerActive}
+          setIsTimerActive={setIsTimerActive}
+        />
+      </div>
+
       {isShowModal && (
         <Modal
           setIsShowModal={setIsShowModal}

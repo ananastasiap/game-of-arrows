@@ -3,7 +3,9 @@ import { MAP_ARROW_CODES } from "../../constants"
 import { useAppDispatch } from "../../../../app/hooks"
 import { setEnteredValue } from "../../store/slices"
 import { useKeyPressedElement } from "./hooks"
+import { Header, Text } from "../../../UI"
 
+import styles from "./keyPressed.module.scss"
 export interface IKeyPressedProps {
   isTimerActive: boolean
 }
@@ -34,8 +36,13 @@ const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
 
   return (
     <div>
-      <h3>KeyPressed</h3>
-      <span>{keyPressedElement}</span>
+      <Header>Key pressed</Header>
+      <div className={styles.container}>
+        <Text>Press the key corresponding to the key in "Random keys"</Text>
+        <div className={styles.wrapper}>
+          <span className={styles.icon}>{keyPressedElement}</span>
+        </div>
+      </div>
     </div>
   )
 }
