@@ -16,7 +16,7 @@ const Score: React.FC = () => {
 
       <Stack direction="row" spacing={1}>
         <Chip
-          className={styles.chipSuccess}
+          className={styles.chipUnsuccsess}
           label={
             <>
               Errors:{" "}
@@ -26,7 +26,7 @@ const Score: React.FC = () => {
           variant="outlined"
         />
         <Chip
-          className={styles.chipUnsuccsess}
+          className={styles.chipSuccess}
           label={
             <>
               Successful:{" "}

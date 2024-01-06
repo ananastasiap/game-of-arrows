@@ -3,7 +3,6 @@ import { Header } from "../../../UI"
 import RandomArrows from "./components/random-arrows"
 import WelcomeText from "./components/welcome-text"
 
-// import styles from "./randomKeys.module.scss"
 export interface IRandomKey {
   isTimerActive: boolean
 }
