@@ -1,6 +1,8 @@
+import { Stack, Chip } from "@mui/material"
 import { useAppSelector } from "../../../../app/hooks"
-import { Header } from "../../../UI"
-import Text from "../../../UI/text"
+import { Header, Text } from "../../../UI"
+
+import styles from "./score.module.scss"
 
 const Score: React.FC = () => {
   const state = useAppSelector((state) => state.playground)
@@ -11,9 +13,29 @@ const Score: React.FC = () => {
       <Text>
         On error, the "Consecutive successful hits" value is reset to zero
       </Text>
-      <span>Errors: {state.totalUnsuccessful}</span>
-      <br />
-      <span>Successful: {state.totalSuccessful}</span>
+
+      <Stack direction="row" spacing={1}>
+        <Chip
+          className={styles.chipSuccess}
+          label={
+            <>
+              Errors:{" "}
+              <span className={styles.counter}>{state.totalUnsuccessful}</span>
+            </>
+          }
+          variant="outlined"
+        />
+        <Chip
+          className={styles.chipUnsuccsess}
+          label={
+            <>
+              Successful:{" "}
+              <span className={styles.counter}>{state.totalSuccessful}</span>
+            </>
+          }
+          variant="outlined"
+        />
+      </Stack>
     </>
   )
 }
